@@ -167,7 +167,7 @@ export const FriendListItemStyled = styled.li`
 `;
 
 export const FriendListItemStatusStyled = styled.span`
-    background-color: ${({isOnline}) => isOnline};
+    background-color: ${({ isOnline }) => isOnline};
     display: block;
     width: 15px;
     height: 15px;
@@ -189,6 +189,11 @@ export const FriendListItemNameStyled = styled.p`
 
 
 // я мало працював з таблицями, тому мені допоміг чат гпт з цими стилями
+
+export const TableWrapperStyled = styled.div`
+    width: 100%;
+    overflow-x: auto;
+`;
 
 export const TransactionHistoryStyled = styled.table`
     width: 100%;
