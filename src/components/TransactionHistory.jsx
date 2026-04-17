@@ -1,13 +1,15 @@
+import { TransactionHistoryStyled, TransactionHistoryTheadStyled } from "../styles/Main.styled";
+
 const TransactionHistory = ({items}) => {
   return (
-    <table className="transaction-history">
-      <thead>
+    <TransactionHistoryStyled className="transaction-history">
+      <TransactionHistoryTheadStyled>
         <tr>
           <th>Type</th>
           <th>Amount</th>
           <th>Currency</th>
         </tr>
-      </thead>
+      </TransactionHistoryTheadStyled>
 
       <tbody>
         {items.map(({id, type, amount, currency}) => (
@@ -18,8 +20,8 @@ const TransactionHistory = ({items}) => {
           </tr>
         ))}
       </tbody>
-    </table>
-  )
-}
+    </TransactionHistoryStyled>
+  );
+};
 
-export default TransactionHistory
+export default TransactionHistory;

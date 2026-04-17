@@ -1,18 +1,21 @@
+import { StatiscticsItemLabelStyled, StatiscticsItemPercentageStyled, StatiscticsItemStyled, StatiscticsListStyled, StatiscticsStyled, StatiscticsTitleStyled } from "../styles/Main.styled";
+
 const Statistics = ({ title, stats }) => {
     return (
-        <section class="statistics">
-            {title && (<h2 class="title">Upload stats</h2>)}
+        <StatiscticsStyled className="statistics">
+            {title && (<StatiscticsTitleStyled className="title">{title}</StatiscticsTitleStyled>)}
 
-            <ul class="stat-list">
+            <StatiscticsListStyled className="stat-list">
                 {stats.map(({id, label, percentage}) => (
-                    <li class="item" id={id}>
-                        <span class="label">{label}</span>
-                        <span class="percentage">{percentage}</span>
-                    </li>
+                    <StatiscticsItemStyled className="item" bgColor={Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")} key={id}>
+                        {/* генерацію я зробив з чатом гпт, щоби менше коду було для генерації рандомного кольору */}
+                        <StatiscticsItemLabelStyled className="label">{label}</StatiscticsItemLabelStyled>
+                        <StatiscticsItemPercentageStyled className="percentage">{percentage}%</StatiscticsItemPercentageStyled>
+                    </StatiscticsItemStyled>
                 ))}
-            </ul>
-        </section>
-    )
-}
+            </StatiscticsListStyled>
+        </StatiscticsStyled>
+    );
+};
 
-export default Statistics
+export default Statistics;

@@ -1,11 +1,13 @@
+import { FriendListItemAvatarStyled, FriendListItemNameStyled, FriendListItemStatusStyled, FriendListItemStyled } from "../styles/Main.styled";
+
 const FriendListItem = ({ avatar, name, isOnline, id }) => {
     return (
-        <li class="item" id={id} style={{position: "relative"}}>
-            <span class="status" style={{backgroundColor: isOnline ? "green" : "red", display: "block", width: "15px", height: "15px", borderRadius: "50%", position: "absolute", inset: "auto auto 40px auto"}}></span>
-            <img class="avatar" src={avatar} alt="User avatar" width="48" />
-            <p class="name">{name}</p>
-        </li>
-    )
-}
+        <FriendListItemStyled className="item" key={id} style={{position: "relative"}}>
+            <FriendListItemStatusStyled className="status" isOnline={isOnline ? "green" : "red"} ></FriendListItemStatusStyled>
+            <FriendListItemAvatarStyled className="avatar" src={avatar} alt="User avatar" width="48" />
+            <FriendListItemNameStyled className="name">{name}</FriendListItemNameStyled>
+        </FriendListItemStyled>
+    );
+};
 
-export default FriendListItem
+export default FriendListItem;
